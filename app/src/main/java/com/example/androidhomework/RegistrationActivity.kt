@@ -29,6 +29,7 @@ class RegistrationActivity : AppCompatActivity() {
                 finish()
             } else {
                 Toast.makeText(this, "Пожалуйста, заполните все поля", Toast.LENGTH_SHORT).show()
+
             }
         }
     }

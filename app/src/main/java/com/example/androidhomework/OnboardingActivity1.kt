@@ -39,5 +39,6 @@ class OnboardingActivity1 : AppCompatActivity() {
         editor.putString("note_$noteCount", noteText)
         editor.putInt("note_count", noteCount + 1)
         editor.apply()
+
     }
 }
