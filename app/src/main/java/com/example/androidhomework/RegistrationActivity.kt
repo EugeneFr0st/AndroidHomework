@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
 class RegistrationActivity : AppCompatActivity() {
 
@@ -13,14 +13,13 @@ class RegistrationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
 
-        val usernameEditText = findViewById<EditText>(R.id.usernameEditText)
-        val passwordEditText = findViewById<EditText>(R.id.passwordEditText)
-        val registerButton = findViewById<Button>(R.id.registerButton)
+        val usernameEditText: EditText = findViewById(R.id.usernameEditText)
+        val passwordEditText: EditText = findViewById(R.id.passwordEditText)
+        val registerButton: Button = findViewById(R.id.registerButton)
 
         registerButton.setOnClickListener {
-
-            val username = usernameEditText.text.toString()
-            val password = passwordEditText.text.toString()
+            val username = usernameEditText.text.toString().trim()
+            val password = passwordEditText.text.toString().trim()
 
             if (username.isNotEmpty() && password.isNotEmpty()) {
 
@@ -28,8 +27,7 @@ class RegistrationActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             } else {
-                Toast.makeText(this, "Пожалуйста, заполните все поля", Toast.LENGTH_SHORT).show()
-
+                Toast.makeText(this, getString(R.string.fill_all_fields), Toast.LENGTH_SHORT).show()
             }
         }
     }

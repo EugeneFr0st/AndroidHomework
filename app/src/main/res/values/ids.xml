@@ -5,5 +5,4 @@
     <item name="registerButton" type="id" />
     <item name="usernameEditText" type="id" />
     <item name="passwordEditText" type="id" />
-
 </resources>

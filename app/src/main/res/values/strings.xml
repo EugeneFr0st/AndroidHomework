@@ -1,4 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">AndroidHomework</string>
 
+    <string name="app_name">My notes</string>
+    <string name="user_name">Username</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log in</string>
+    <string name="enter_note">Enter note</string>
+    <string name="save">Save</string>
+    <string name="sign_in">Sign in</string>
+    <string name="english">English</string>
+    <string name="russian">Русский</string>
+    <string name="fill_all_fields">Please, fill all fields</string>
 </resources>

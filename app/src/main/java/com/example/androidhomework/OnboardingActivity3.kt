@@ -32,6 +32,5 @@ class OnboardingActivity3 : AppCompatActivity() {
         }
 
         notesTextView.text = if (notes.isNotEmpty()) notes.toString() else "Нет сохраненных заметок"
-
     }
 }

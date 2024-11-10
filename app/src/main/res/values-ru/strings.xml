@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Мои заметки</string>
+    <string name="user_name">Имя пользователя</string>
+    <string name="password">Пароль</string>
+    <string name="log_in">Войти</string>
+    <string name="enter_note">Введите текст заметки</string>
+    <string name="save">Сохранить</string>
+    <string name="sign_in">Зарегистрироваться</string>
+    <string name="english">English</string>
+    <string name="russian">Русский</string>
+    <string name="fill_all_fields">Пожалуйста, заполните все поля</string>
+</resources>
