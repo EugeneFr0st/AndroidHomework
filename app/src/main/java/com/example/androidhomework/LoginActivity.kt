@@ -23,13 +23,12 @@ class LoginActivity : AppCompatActivity() {
             val password = passwordEditText.text.toString()
 
             if (username.isNotEmpty() && password.isNotEmpty()) {
-
                 val intent = Intent(this, MainActivity::class.java)
+                intent.putExtra("username", username)
                 startActivity(intent)
                 finish()
             } else {
-                Toast.makeText(this, "Пожалуйста, заполните все поля", Toast.LENGTH_SHORT).show()
-
+                Toast.makeText(this, getString(R.string.fill_all_fields_message), Toast.LENGTH_SHORT).show()
             }
         }
     }

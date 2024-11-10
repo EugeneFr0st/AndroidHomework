@@ -7,6 +7,13 @@
     android:padding="16dp"
     android:background="@color/colorSecond">
 
+    <TextView
+        android:id="@+id/welcomeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_gravity="center"/>
+
     <Button
         android:id="@+id/viewNotesButton"
         android:layout_width="48dp"
