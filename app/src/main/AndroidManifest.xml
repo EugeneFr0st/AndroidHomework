@@ -29,5 +29,4 @@
         <activity android:name=".OnboardingActivity3" />
 
     </application>
-
 </manifest>

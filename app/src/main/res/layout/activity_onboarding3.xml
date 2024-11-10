@@ -11,4 +11,5 @@
         android:layout_height="wrap_content"
         android:text="Здесь будут ваши заметки"
         android:textSize="18sp" />
+
 </LinearLayout>
