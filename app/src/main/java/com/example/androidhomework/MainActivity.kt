@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         addNoteButton.setOnClickListener {
             val intent = Intent(this, OnboardingActivity3::class.java)
             startActivity(intent)
+
         }
     }
 }

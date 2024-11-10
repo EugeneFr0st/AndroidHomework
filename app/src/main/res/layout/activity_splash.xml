@@ -3,11 +3,14 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/splash_background">
+    android:background="@drawable/splash_background"
+    >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="24sp"
-        android:padding="16dp" />
+        android:padding="16dp"
+        android:drawableLeft="@drawable/splash_icon"
+        />
 </LinearLayout>
