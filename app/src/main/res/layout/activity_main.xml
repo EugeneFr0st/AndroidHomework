@@ -3,19 +3,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="@color/colorSecond">
+
+    <TextView
+        android:id="@+id/welcomeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_gravity="center"/>
 
     <Button
         android:id="@+id/viewNotesButton"
-        android:layout_width="wrap_content"
+        android:layout_width="48dp"
         android:layout_height="wrap_content"
-        android:text="Добавить заметку"
-        android:layout_gravity="center" />
+        android:drawableLeft="@drawable/addnote_icon"
+        />
 
     <Button
         android:id="@+id/addNoteButton"
-        android:layout_width="wrap_content"
+        android:layout_width="48dp"
         android:layout_height="wrap_content"
-        android:text="Посмотреть заметки"
-        android:layout_gravity="center" />
+        android:drawableLeft="@drawable/shownote_icon"/>
+
 </LinearLayout>
