@@ -6,10 +6,12 @@
     android:padding="16dp"
     android:background="@color/colorSecond">
 
-    <TextView
-        android:id="@+id/notesTextView"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/notesRecycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:textSize="@dimen/text_size"
         style="@style/MyTextStyle"/>
 </LinearLayout>
+
+

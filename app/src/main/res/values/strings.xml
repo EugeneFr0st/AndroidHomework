@@ -7,8 +7,13 @@
     <string name="log_in">Log in</string>
     <string name="fill_all_fields_message">Please, enter all fields!</string>
     <string name="welcome_message">Welcome, %1$s!</string>
+    <string name="enter_note_title">Enter title of note</string>
     <string name="enter_note">Enter note</string>
     <string name="save">Save</string>
+    <string name="save_message_success">The note is saved!</string>
+    <string name="save_message_failed">The note is not saved!</string>
+    <string name="none_notes_message">None notes yet</string>
+    <string name="delete">Delete</string>
     <string name="sign_in">Sign in</string>
     <string name="english">English</string>
     <string name="russian">Русский</string>

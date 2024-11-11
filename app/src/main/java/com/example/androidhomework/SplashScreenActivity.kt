@@ -14,7 +14,6 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         Handler().postDelayed({
-            // Проверяем, авторизован ли пользователь
             if (isUserLoggedIn()) {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
