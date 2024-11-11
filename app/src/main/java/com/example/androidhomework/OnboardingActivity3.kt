@@ -2,35 +2,48 @@ package com.example.androidhomework
 
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class OnboardingActivity3 : AppCompatActivity() {
 
-    private lateinit var notesTextView: TextView
+    private lateinit var notesRecyclerView: RecyclerView
+    private lateinit var adapter: NoteAdapter
     private lateinit var sharedPreferences: SharedPreferences
+    private var notesList: MutableList<Note> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_onboarding3)
 
-        notesTextView = findViewById(R.id.notesTextView)
+        notesRecyclerView = findViewById(R.id.notesRecycler_view)
         sharedPreferences = getSharedPreferences("notes", MODE_PRIVATE)
 
-        displayNotes()
+        loadNotes()
+        setupRecyclerView()
     }
 
-    private fun displayNotes() {
+    private fun loadNotes() {
+        notesList.clear()
         val noteCount = sharedPreferences.getInt("note_count", 0)
-        val notes = StringBuilder()
 
         for (i in 0 until noteCount) {
-            val note = sharedPreferences.getString("note_$i", null)
-            if (note != null) {
-                notes.append(note).append("\n")
+            val title = sharedPreferences.getString("note_${i}_title", null)
+            val date = sharedPreferences.getString("note_${i}_date", null)
+            val noteText = sharedPreferences.getString("note_${i}_text", null)
+
+            if (title != null && date != null && noteText != null) {
+                notesList.add(Note(i, title, noteText, date))
             }
         }
+    }
 
-        notesTextView.text = if (notes.isNotEmpty()) notes.toString() else "Нет сохраненных заметок"
+    private fun setupRecyclerView() {
+        adapter = NoteAdapter(notesList, { position ->
+            adapter.removeAt(position)
+        }, sharedPreferences)
+        notesRecyclerView.layoutManager = LinearLayoutManager(this)
+        notesRecyclerView.adapter = adapter
     }
 }

@@ -6,6 +6,9 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class OnboardingActivity1 : AppCompatActivity() {
 
@@ -19,24 +22,29 @@ class OnboardingActivity1 : AppCompatActivity() {
 
         val saveButton = findViewById<Button>(R.id.saveButton)
         val noteEditText = findViewById<EditText>(R.id.noteEditText)
+        val titleEditText = findViewById<EditText>(R.id.titleEditText)
 
         saveButton.setOnClickListener {
+            val title = titleEditText.text.toString()
             val noteText = noteEditText.text.toString()
 
-            if (noteText.isNotEmpty()) {
-                saveNote(noteText)
-                Toast.makeText(this, "Заметка сохранена", Toast.LENGTH_SHORT).show()
+            if (title.isNotEmpty() && noteText.isNotEmpty()) {
+                saveNote(title, noteText)
+                Toast.makeText(this, getString(R.string.save_message_success), Toast.LENGTH_SHORT).show()
                 finish()
             } else {
-                Toast.makeText(this, "Введите текст заметки", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.save_message_failed), Toast.LENGTH_SHORT).show()
             }
         }
     }
-
-    private fun saveNote(noteText: String) {
+    private fun saveNote(title: String, noteText: String) {
         val editor = sharedPreferences.edit()
         val noteCount = sharedPreferences.getInt("note_count", 0)
-        editor.putString("note_$noteCount", noteText)
+        val currentDate = SimpleDateFormat("dd.MM.yyyy HH:mm:ss", Locale.getDefault()).format(Date())
+
+        editor.putString("note_${noteCount}_title", title)
+        editor.putString("note_${noteCount}_date", currentDate)
+        editor.putString("note_${noteCount}_text", noteText)
         editor.putInt("note_count", noteCount + 1)
         editor.apply()
     }

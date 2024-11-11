@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:gravity="center"
-    android:padding="16dp"
-    android:background="@color/colorSecond">
+    android:padding="16dp">
 
-    <EditText
-        android:id="@+id/titleEditText"
+    <TextView
+        android:id="@+id/title_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/enter_note_title" />
+        android:textSize="20sp"
+        android:textStyle="bold"/>
 
-    <EditText
-        android:id="@+id/noteEditText"
+    <TextView
+        android:id="@+id/date_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/enter_note" />
+        android:textSize="18sp"/>
 
     <Button
-        android:id="@+id/saveButton"
+        android:id="@+id/delete_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/save"
+        android:text="@string/delete"
         android:background="@drawable/rounded_button"/>
 </LinearLayout>

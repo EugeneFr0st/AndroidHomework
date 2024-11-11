@@ -14,9 +14,20 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         Handler().postDelayed({
-            val intent = Intent(this, RegistrationActivity::class.java)
-            startActivity(intent)
+            if (isUserLoggedIn()) {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            } else {
+                val intent = Intent(this, RegistrationActivity::class.java)
+                startActivity(intent)
+            }
             finish()
         }, splashScreenTimeout)
+    }
+
+    private fun isUserLoggedIn(): Boolean {
+        // Реализуйте логику проверки, авторизован ли пользователь
+        // Например, проверка сохраненных токенов или данных в SharedPreferences
+        return false
     }
 }

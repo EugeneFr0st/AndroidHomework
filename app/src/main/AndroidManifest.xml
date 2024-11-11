@@ -10,24 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-        <activity android:name=".SplashScreenActivity"
+        <activity
+            android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".RegistrationActivity" />
-
-        <activity android:name=".LoginActivity" />
-
         <activity android:name=".MainActivity" />
-
+        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".LoginActivity" />
         <activity android:name=".OnboardingActivity1" />
-
         <activity android:name=".OnboardingActivity3" />
-
     </application>
 
 </manifest>
